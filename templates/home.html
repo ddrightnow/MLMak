@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ML Flask App</title>
+</head>
+<body>
+<h2>Property Price Predictor Kuala Lumpur</h2>
+
+<div>
+	<form action="{{url_for('predict')}}" method="POST">
+		<p>location</p>
+		<textarea name = "location" rows="1" cols="25"> </textarea>
+		<p>Furnishing Level</p>
+		<textarea name = "furnishingLevel" rows="1" cols="25"> </textarea>
+		<p>number of bedrooms</p>
+		<textarea name = "bedrooms" rows="1" cols="25"> </textarea>
+		<p>number of bathrooms</p>
+		<textarea name = "number of bathrooms" rows="1" cols="25"> </textarea>
+		<p>number of parking spots</p>
+		<textarea name = "parking" rows="1" cols="25"> </textarea>
+		<br/>
+		<input type="submit" class ="btn-info" value="predict" name="">
+
+	</form>
+
+</div>
+</body>
+</html>
