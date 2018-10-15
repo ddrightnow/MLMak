@@ -40,26 +40,26 @@ def predict():
 
 	##Alternative Use of Saved Model
 	#modelkl = open("model64bit.joblib","rb")
-	tpred = joblib.load("model64bit.joblib")
+	#tpred = joblib.load("model64bit.joblib")
 
 	if request.method == 'POST':
-		location = request.form[location]
-		furnishingLevel = request.form[furnishingLevel]
-		bedrooms = request.form[bedrooms]
-		bathrooms = request.form[bathrooms]
-		parking = request.form[parking]
+		location2 = request.form['location']
+		furnishingLevel2 = request.form['furnishingLevel']
+		bedrooms2 = request.form['bedrooms']
+		bathrooms2 = request.form['number of bathrooms']
+		parking2 = request.form['parking']
 
-		dat = [location,furnishingLevel,bedrooms,parking,parking]
+		dat = [location2,furnishingLevel2,bedrooms2,bathrooms2,parking2]
 
-		data = np.asarray(dat)
+		#data = np.asarray(dat)
 		#data = label_encoder.fit_transform(data)
 
 		# data['location'] = label_encoder.fit_transform(data['location'])
 		# data['furnishingLevel'] = label_encoder.fit_transform(data['furnishingLevel'])
 
 		# modData = ''
-		my_prediction = tpred.predict([data])
-	return render_template('results.html',prediction = my_prediction)
+		#my_prediction = tpred.predict([data])
+	return render_template('results.html',prediction = dat) 
 
 
 
